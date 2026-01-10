@@ -31,20 +31,63 @@
 
 ## 📦 安装
 
-这个插件基于 **Claude Code Slash Commands**，无需额外安装，只需将命令文件放在项目的 `.claude/commands/review/` 目录下即可。
+这个插件基于 **Claude Code Slash Commands**，提供两种安装方式：
 
-### 自动安装（如果你已经克隆了这个项目）
+### 方式一：全局安装（推荐）
 
-插件已经在当前项目中配置好了！直接使用即可。
+安装到用户全局目录，在**任何项目**中都可以使用审查命令。
 
-### 手动安装到其他项目
+**Linux / macOS**：
+```bash
+# 克隆或下载本项目
+git clone https://github.com/Dream4tack/ai-interview.git
+cd ai-interview
 
-将 `.claude/commands/review/` 目录复制到你的项目中：
+# 运行安装脚本
+./install.sh
+```
+
+**Windows (PowerShell)**：
+```powershell
+# 克隆或下载本项目
+git clone https://github.com/Dream4tack/ai-interview.git
+cd ai-interview
+
+# 运行安装脚本
+.\install.ps1
+```
+
+安装脚本会：
+- ✅ 自动检测审查命令
+- ✅ 备份现有命令（如果有）
+- ✅ 复制命令到 `~/.claude/commands/review/`
+- ✅ 显示可用命令列表
+
+**卸载**：
+```bash
+# Linux / macOS
+./uninstall.sh
+
+# Windows
+.\uninstall.ps1
+```
+
+### 方式二：项目本地安装
+
+仅在特定项目中使用审查命令。
 
 ```bash
 # 在你的项目根目录
 mkdir -p .claude/commands
 cp -r /path/to/ai-interview/.claude/commands/review .claude/commands/
+```
+
+### 更新到最新版本
+
+```bash
+cd ai-interview
+git pull
+./install.sh  # 或 .\install.ps1 (Windows)
 ```
 
 ## 🚀 快速开始
